@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (Movie data in (List<Movie>)ViewData["MovieList"])
+{
+    <tr>
+        <td>@data.Title</td>
+        <td>@data.Duration</td>
+        <td>@data.Subtitle</td>
+        <td>@data.ReleaseDate</td>
+        <td>@data.Language</td>
+        <td>@data.MovieType</td>
+        <td>
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Option
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="javascript:SpawnModal('@data.Title', '@data.Duration', '@data.Subtitle', '@data.ReleaseDate', '@data.Language', '@data.MovieType')">Edit</a></li>
+                    <li><a class="dropdown-item" href="https://localhost:7097/movie/delete?Title=@data.Title">Delete</a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+}
