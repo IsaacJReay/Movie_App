@@ -14,5 +14,5 @@ public class Movie
     public string Subtitle { get; set; } = default!;
     public DateTime ReleaseDate { get; set; }
     public string Language { get; set; } = default!;
-    public Actions MovieType { get; set; }
+    public Actions MovieType { get; set; } = default!;
 }

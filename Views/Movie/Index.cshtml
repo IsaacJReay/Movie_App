@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-@foreach (Movie data in (List<Movie>)ViewData["MovieList"])
+@foreach (Movie data in ViewData["MovieList"] as IList<Movie> ?? default!)
 {
     <tr>
         <td>@data.Title</td>
